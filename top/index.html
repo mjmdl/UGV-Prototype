@@ -1,0 +1,96 @@
+<!--
+    Elabore uma página de inscrição de vestibular para Engenharia de Software da Ugv, tendo como base os conteúdos trabalhados em JavaScript, HTML e CSS.
+    A página deverá ter um formulário para o preenchimento dos dados (todos de preenchimento obrigatório). 
+    O campo nome não poderá possuir menos de 7 caracteres.
+    No rodapé da página, deverá conter os seus dados, como desenvolvedor.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vestibular UGV 2023</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <script src="src/script.js" defer></script>
+</head>
+<body onload="load_courses(form_course); generate_challenge(challenge_field)">
+    <section class="container">
+        <section class="top_row">
+            <img class="img_title" src="https://d335luupugsy2.cloudfront.net/cms/files/311070/1651770072/$luenpdlr9e" alt="Vestibular de Inverno">
+            <img class="img_logo" src="https://uniao.ugv.edu.br/content/themes/base/assets/imgs/logo.png" alt="UGV - Centro Universitário">
+        </section>
+        <main>
+            <section class="info_column">
+                <img class="img_info" src="https://d335luupugsy2.cloudfront.net/cms/files/311070/1660562893/$vrep690rqsc" alt="Garanta sua vaga para 2023">
+                <p class="p_info"><strong>Inscreva-se agora mesmo!</strong> Após sua inscrição, enviaremos um e-mail para você acessar e realizar a prova <strong>quando e onde quiser.</strong> </p>
+                <img class="img_incentive" src="https://d335luupugsy2.cloudfront.net/cms/files/311070/1660562893/$xmm9ct64kq" alt="Siga o curso da sua vida.">
+            </section>
+            <form action="#" id="regist_form" onsubmit="submit_form(event, this)">
+                <div class="form_field">
+                    <label form="regist_form" for="form_name">Nome<span class="input_required">*</span></label>
+                    <input type="text" name="name" id="form_name" placeholder="Nome" pattern=".{7,}" required>
+                    <label id="form_name_alert" class="form_alert" hidden>Exigidos 7 ou mais caractéres.</label>
+                </div>
+                <div class="form_field">
+                    <label form="regist_form" for="form_email">Email<span class="input_required">*</span></label>
+                    <input type="text" name="email" id="form_email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                    <label id="form_email_alert" class="form_alert" hidden>Email inválido.</label>
+                </div>
+                <div class="form_field">
+                    <label form="regist_form" for="form_birth">Data de Nascimento<span class="input_required">*</span></label>
+                    <input type="date" name="birth" id="form_birth" required>
+                    <label id="form_birth_alert" class="form_alert" hidden>Data inválida; use Mês/Dia/Ano.</label>
+                </div>
+                <div class="form_field">
+                    <label form="regist_form" for="form_cpf">CPF<span class="input_required">*</span></label>
+                    <input type="text" name="cpf" id="form_cpf" placeholder="123.456.789-10" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" required>
+                    <label id="form_cpf_alert" class="form_alert" hidden>CPF inválido.</label>
+                </div>
+                <div class="form_field">
+                    <label form="regist_form" for="form_city">Cidade<span class="input_required">*</span></label>
+                    <input type="text" name="cpf" id="form_city" placeholder="Cidade" required>
+                    <label id="form_city_alert" class="form_alert" hidden>Cidade inválida.</label>
+                </div>
+                <div class="form_field">
+                    <label form="regist_form" for="form_course">Escolha o seu Curso<span class="input_required">*</span></label>
+                    <select name="course" id="form_course" required></select>
+                    <label id="form_course_alert" class="form_alert" hidden>Escolha um curso.</label>
+                </div>
+                <div class="form_field">
+                    <label form="regist_form" for="form_phone">Celular<span class="input_required">*</span></label>
+                    <input type="tel" name="phone" id="form_phone" placeholder="+01 (10) 01010-1234" required>
+                    <label id="form_phone_alert" class="form_alert" hidden>Número inválido.</label>
+                </div>
+                <div class="form_field">
+                    <label form="regist_form" for="form_friend">Indicação de Amigo</label>
+                    <input type="text" name="friend" id="form_friend" placeholder="Amigo">
+                </div>
+                <div class="form_field">
+                    <label id="challenge_field" form="regist_form" for="form_challenge">7 + 5 = ?<span class="input_required">*</span></label>
+                    <input type="number" name="challenge" id="form_challenge" placeholder="Resultado" required>
+                    <label id="form_challenge_alert" class="form_alert" hidden>Resultado incorreto.</label>
+                </div>
+                <div class="form_field">
+                    <input id="form_submit" type="submit" value="INSCREVA-SE" onclick="
+                        verify_form(event, form_name, form_email, form_birth, form_cpf, form_city, form_course, form_phone, form_challenge);
+                        ">
+                    <label id="form_submit_alert" class="form_alert" hidden>SUA INSCRIÇÃO FOI ENVIADA!</label>
+                </div>
+            </form>
+        </main>
+        <footer>
+            <div class="dev_name">Matheus José Maidel, Setembro de 2022</div>
+            <div class="dev_contacts">
+                <div>Email: ens-matheusmaidel@ugv.edu.br</div>
+                <div>Telefone: +55 (42) 98827-7872</div>
+                <a href="https://github.com/mjmdl" target="_blank">Github</a>
+            </div>
+        </footer>
+    </section>
+</body>
+</html>

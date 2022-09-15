@@ -1,0 +1,22 @@
+{
+    "courses":[
+        { "value": "none","name": "Selecione"               },
+        { "value": "adm", "name": "Administração"           },
+        { "value": "agr", "name": "Agronomia"               },
+        { "value": "arq", "name": "Arquitetura e Urbanismo" },
+        { "value": "bio", "name": "Biomedicina"             },
+        { "value": "con", "name": "Ciências Contábeis"      },
+        { "value": "dir", "name": "Direito"                 },
+        { "value": "edf", "name": "Educação Física"         },
+        { "value": "civ", "name": "Engenharia Civil"        },
+        { "value": "sof", "name": "Engenharia de Software"  },
+        { "value": "ele", "name": "Engenharia Elétrica"     },
+        { "value": "mec", "name": "Engenharia Mecânica"     },
+        { "value": "far", "name": "Farmácia"                },
+        { "value": "fis", "name": "Fisioterapia"            },
+        { "value": "vet", "name": "Medicina Veterinária"    },
+        { "value": "nut", "name": "Nutrição"                },
+        { "value": "odo", "name": "Odontologia"             },
+        { "value": "psi", "name": "Psicologia"              }
+    ]
+}

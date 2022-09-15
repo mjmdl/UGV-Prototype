@@ -1,0 +1,217 @@
+:root
+{
+    --dark-blue: rgb(11, 11, 54);
+    --med-blue: rgb(4, 4, 143);
+    --footer-blue: rgb(5, 5, 97);
+    --orange: rgb(255, 145, 0);
+}
+
+*
+{
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-size: 16px;
+}
+
+body
+{
+    padding: 0;
+    margin: 0;
+}
+
+.container
+{
+    width: 100%;
+    background: linear-gradient(
+        95deg,
+        var(--dark-blue),
+        var(--med-blue)
+    );
+}
+
+.top_row
+{
+    display: flex;
+    justify-content: space-around;
+    padding: 5vh 0 10vh 0;
+}
+
+.img_title
+{
+    width: 50vw;
+}
+
+.img_logo
+{
+    width: 30vw;
+}
+
+main
+{
+    display: flex;
+}
+
+.info_column
+{
+    height: 100vh;
+    max-width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.info_column .img_info, .p_info, .img_incentive
+{
+    margin: 0 auto;
+}
+
+.img_info
+{
+    width: 35vw;
+}
+
+.p_info
+{
+    width: 80%;
+    text-align: center;
+}
+
+.img_incentive
+{
+    width: 30vw;
+}
+
+#regist_form
+{
+    width: 33vw;
+    min-width: 300px;
+    padding: 0 2vw 0 5vw;
+}
+
+.form_field
+{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.form_field input, select, option
+{
+    padding: 5px;
+    border-top: none;
+    border-right: none;
+    border-left: 2px solid rgb(134, 115, 187);
+    border-bottom: 2px solid rgb(134, 115, 187);
+    color: black;
+}
+
+.form_alert
+{
+    font-size: 14px;
+    color: var(--orange);
+}
+
+.input_required
+{
+    color: var(--orange);
+    font-weight: 700;
+}
+
+#form_submit
+{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 2vh;
+    padding: 10px 0;
+    
+    background-color: var(--orange);
+    
+    border: none;
+    border-radius: 5px;
+
+    color: var(--med-blue);
+    font-weight: 700;
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+#form_submit_alert
+{
+    font-size: 16px;
+    text-align: center;
+}
+
+footer
+{
+    padding: 1vh 0 1vh 0;
+    margin-top: 3vh;
+
+    background-color: var(--orange);
+}
+
+footer .dev_contacts
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer div, a
+{
+    width: 33vw;
+
+    color: var(--med-blue);
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.dev_name
+{
+    width: 100%;
+    margin-bottom: 1vh;
+    
+    text-align: center;
+}
+
+@media screen and (max-width: 768px)
+{
+    .top_row
+    {
+        height: 30vh;
+        flex-direction: column;
+        align-content: space-around;
+    }
+
+    .top_row img
+    {
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    main
+    {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .info_column
+    {
+        height: 60vh;
+        max-width: none;
+    }
+
+    .info_column img
+    {
+        width: 85vw;
+        margin: 0 auto;
+    }
+
+    #regist_form
+    {
+        width: 90vw;
+    }
+}
