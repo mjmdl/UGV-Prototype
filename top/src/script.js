@@ -1,8 +1,12 @@
 const DB_PATH = "src/db.json"
+let IGNORE_COURSE = false;
+
 let challenge_answer;
 
 function load_courses(select)
 {
+    if (IGNORE_COURSE)
+        return;
     fetch(DB_PATH)
         .then(function (response)
         {
@@ -84,7 +88,7 @@ function verify_form(e, name, email, birth, cpf, city, course, phone, challenge)
         document.getElementById("form_city_alert").setAttribute("hidden", "true");
     }
 
-    if (course.value == "none")
+    if (!IGNORE_COURSE && (course.value == "none" || !course.value))
     {
         document.getElementById("form_course_alert").removeAttribute("hidden");
         fail = true;
